@@ -64,7 +64,7 @@ if [ ! -e /root/.secondboot ]; then
 
 
     logger "provisioning logshare-cli command with cloudflare credentials"
-    echo "START=`date +%s --date '-11 minutes'`\nEND=`date +%s --date '-10 minutes'`\n\n/root/go/bin/logshare-cli --api-key=$APIKEY --api-email=$APIEMAIL --zone-name=$ZONENAME --count=-1 --by-received --google-storage-bucket=$GSB --google-project-id=`jq -r .gcs_project_id /root/config.json` --start-time=$START --end-time=$END --fields `cat /root/fields.txt` >> /root/logshare-cli.log 2>&1" > /root/cron-script.sh
+    echo -e "START=\`date +%s --date '-11 minutes'\`\nEND=\`date +%s --date '-10 minutes'\`\n\n/root/go/bin/logshare-cli --api-key=$APIKEY --api-email=$APIEMAIL --zone-name=$ZONENAME --count=-1 --by-received --google-storage-bucket=$GSB --google-project-id=`jq -r .gcs_project_id /root/config.json` --start-time=\$START --end-time=\$END --fields `cat /root/fields.txt` >> /root/logshare-cli.log 2>&1" > /root/cron-script.sh
 
     # Create two Buckets - One for the Logs and one for the Staging Files
     logger "provisioning both gcs buckets"
