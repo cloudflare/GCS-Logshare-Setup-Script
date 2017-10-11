@@ -15,7 +15,7 @@ The main.sh script from your local machine creates a GCC VM that runs [Cloudflar
 ## Setup Instructions
 
 1. Select or create a Cloud Platform project:
-https://console.cloud.google.com/
+    * https://console.cloud.google.com/
 2. Clone the GCS Automation Script on your local machine: 
     * ``` git clone https://github.com/cloudflare/GCS-Logshare-Setup-Script.git ```
 3. Enable the Service Management API for your project:
