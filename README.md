@@ -17,7 +17,7 @@ The main.sh script from your local machine creates a GCC VM that runs [Cloudflar
 1. Select or create a Cloud Platform project:
 https://console.cloud.google.com/
 2. Clone the GCS Automation Script on your local machine: 
-    * ``` git clone https://github.com/farberjd/gcsLogshareStartupScript.git ```
+    * ``` git clone https://github.com/cloudflare/GCS-Logshare-Setup-Script.git ```
 3. Enable the Service Management API for your project: https://console.developers.google.com/apis/api/servicemanagement.googleapis.com/overview
 4. Configure and enable your Google Billing profile: https://support.google.com/cloud/answer/6293499#enable-billing  
 5. Enable the following Google APIs: 
