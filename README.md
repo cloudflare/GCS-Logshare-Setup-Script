@@ -18,8 +18,10 @@ The main.sh script from your local machine creates a GCC VM that runs [Cloudflar
 https://console.cloud.google.com/
 2. Clone the GCS Automation Script on your local machine: 
     * ``` git clone https://github.com/cloudflare/GCS-Logshare-Setup-Script.git ```
-3. Enable the Service Management API for your project: https://console.developers.google.com/apis/api/servicemanagement.googleapis.com/overview
-4. Configure and enable your Google Billing profile: https://support.google.com/cloud/answer/6293499#enable-billing  
+3. Enable the Service Management API for your project:
+    * https://console.developers.google.com/apis/api/servicemanagement.googleapis.com/overview
+4. Configure and enable your Google Billing profile:
+    * https://support.google.com/cloud/answer/6293499#enable-billing  
 5. Enable the following Google APIs: 
    * Google Cloud Storage,
    * Google BigQuery,
@@ -32,4 +34,5 @@ https://console.cloud.google.com/
    * Cloudflare_api_email - Cloudflare user account email address
    * Zone_name - domain name; example: mydomain.com
    * Gcs_project_id - Google Cloud Project ID
-8. Run the main orchestration script: ``` bash main.sh ```
+8. Run the main orchestration script: 
+   * ``` bash main.sh ```
