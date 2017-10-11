@@ -73,7 +73,7 @@ gsutil mb -c regional -l us-central1 -p $PROJECTID $VMBUCKET
 gsutil cp config.json gcs-initialize.sh $VMBUCKET 
 
 ## Output newline
-echo -e "Creating VM..."
+echo -e "Creating VM...\n"
 
 ## Create the VM
 gcloud compute instances create "logshare-cli-cron-$RANDOMVALUE" --zone "us-central1-a" --machine-type "f1-micro" --image "ubuntu-1604-xenial-v20170919" --subnet "default" --metadata "startup-script-url=$VMBUCKET/gcs-initialize.sh,CONFIGBUCKET=$VMBUCKETVALUE,RANDOMVALUE=$RANDOMVALUE" --image-project "ubuntu-os-cloud" --boot-disk-size "10" --boot-disk-type "pd-standard" --scopes "https://www.googleapis.com/auth/cloud-platform" --project $PROJECTID --verbosity="error"
