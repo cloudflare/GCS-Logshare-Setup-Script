@@ -22,11 +22,10 @@ The main.sh script from your local machine creates a GCC VM that runs [Cloudflar
     * https://console.developers.google.com/apis/api/servicemanagement.googleapis.com/overview
 4. Configure and enable your Google Billing profile:
     * https://support.google.com/cloud/answer/6293499#enable-billing  
-5. Enable the following Google APIs: 
+5. Enable the following Google APIs [here](https://console.cloud.google.com/apis/library): 
    * Google Cloud Storage,
    * Google BigQuery,
    * Cloud Function
-   * https://console.cloud.google.com/apis/library
 6. Create a copy of default.config.json and rename to config.json
    * ``` mv config.default.json config.json ```
 7. Modify config.json with your cloudflare account details
