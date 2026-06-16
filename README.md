@@ -1,10 +1,10 @@
 # GCS Logshare Setup Script
 
 ## Description
-The main.sh script from your local machine creates a GCC VM that runs [Cloudflare's Logshare](https://github.com/cloudflare/logshare) tool on a cron schedule to push Enterprise Logs to BigQuery. Logs are written to GCS and then automatically pushed into BigQuery using the [GCS-To-Big-Query](https://github.com/cloudflare/GCS-To-Big-Query) code.
+The main.sh script from your local machine creates a GCE VM that runs [Cloudflare's Logshare](https://github.com/cloudflare/logshare) tool on a cron schedule to push Enterprise Logs to BigQuery. Logs are written to GCS and then automatically pushed into BigQuery using the [GCS-To-Big-Query](https://github.com/cloudflare/GCS-To-Big-Query) code.
 
 ## Defaults
-1. The cron job pushed runs every 1 minute and pulls logs from 10 minutes ago to 11 minutes ago. 
+1. The cron job runs every 1 minute and pulls logs from 10 minutes ago to 11 minutes ago. 
 2. The ELS endpoint's fields are subject to change. At the time the VM is built, we cache a local version of the available fields. This is subject to change, but can be updated manually by modifying the fields.txt file.
 
 ## Requirements
@@ -26,7 +26,7 @@ The main.sh script from your local machine creates a GCC VM that runs [Cloudflar
    * Google Cloud Storage,
    * Google BigQuery,
    * Cloud Function
-6. Create a copy of default.config.json and rename to config.json
+6. Create a copy of config.default.json and rename to config.json
    * ``` mv config.default.json config.json ```
 7. Modify config.json with your cloudflare account details
    * Cloudflare_api_key  - Cloudflare API Key
