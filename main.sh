@@ -29,7 +29,7 @@ fi
 if gcloud --version 2>&1 | grep "Updates are available for some Cloud SDK components." -c; then # Checking for Updates
     gcloud components update --quiet
 elif gcloud --version > /dev/null; then # skipping if already installed.
-    echo "GCloud SDK already Installing. Skipping init configuration."
+    echo "GCloud SDK already installed. Skipping init configuration."
 else # install gcloud sdk
    curl https://sdk.cloud.google.com > cloudsdk.sh
    chmod +x cloudsdk.sh
@@ -79,5 +79,5 @@ echo -e "Creating VM...\n"
 gcloud compute instances create "logshare-cli-cron-$RANDOMVALUE" --zone "us-central1-a" --machine-type "f1-micro" --image "ubuntu-1604-xenial-v20170919" --subnet "default" --metadata "startup-script-url=$VMBUCKET/gcs-initialize.sh,CONFIGBUCKET=$VMBUCKETVALUE,RANDOMVALUE=$RANDOMVALUE" --image-project "ubuntu-os-cloud" --boot-disk-size "10" --boot-disk-type "pd-standard" --scopes "https://www.googleapis.com/auth/cloud-platform" --project $PROJECTID --verbosity="error"
 
 ## Output instructions
-echo -e "\nSuccessfully kicked off the VM provisioning steps. The VM may take up to 10 minutes to fully provision.\n\nIf you are seeing any issues, please share them by submitting an issue to the repository.\n\nYou can login to the VM via ssh with: gcloud compute ssh logshare-cli-cron-$RANDOMVALUE --zone us-central1-a\n\nAnd then you can view the VM's startup script progress by tailing the syslog file:\n\ttail -f /var/log/syslog\n\nEnjoy!"
+echo -e "\nSuccessfully kicked off the VM provisioning steps. The VM may take up to 10 minutes to fully provision.\n\nIf you are seeing any issues, please share them by submitting an issue to the repository.\n\nYou can log in to the VM via ssh with: gcloud compute ssh logshare-cli-cron-$RANDOMVALUE --zone us-central1-a\n\nAnd then you can view the VM's startup script progress by tailing the syslog file:\n\ttail -f /var/log/syslog\n\nEnjoy!"
 
